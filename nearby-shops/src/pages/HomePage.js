@@ -31,7 +31,7 @@ export default function HomePage() {
 
   return (
     <div className="homepage">
-      <h1 className="main-title">Show My shop</h1>
+      <h1 className="main-title">ApnaBazaar</h1>
       <p className="subtitle">
         Discover nearby shops and connect with trusted vendors near you.
       </p>
@@ -73,7 +73,7 @@ export default function HomePage() {
       )}
 
       <footer className="footer">
-        © 2025 Show my shop — Empowering Local Businesses 💙
+        © 2025 ApnaBazaar — Empowering Local Businesses 💙
       </footer>
     </div>
   );

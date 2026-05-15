@@ -1,96 +1,403 @@
-.dashboard-container {
-  position: relative;
-  display: grid;
-  grid-template-columns: 55% 45%;
-  height: 100vh;
-  overflow: hidden;
+/* =========================
+   USER DASHBOARD CSS
+========================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.dashboard-container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background: #f4f7fb;
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   MAP SECTION - 50%
+========================= */
 
 .map-section {
-  position: relative;
-  height: 100%;
+  width: 50%;
+  height: 100vh;
+
+  padding: 10px;
+
+  background: #f4f7fb;
 }
 
-.list-section {
-  background: #f9f9fc;
-  padding: 20px;
-  overflow-y: auto;
+.map-section .leaflet-container {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.08),
+    0 2px 8px rgba(0,0,0,0.04);
 }
+
+/* =========================
+   RIGHT PANEL - 50%
+========================= */
+
+.shop-list-panel {
+  width: 50%;
+  height: 100vh;
+
+  padding: 22px;
+
+  overflow-y: auto;
+
+  background: linear-gradient(
+    135deg,
+    #f8fbff 0%,
+    #eef4ff 45%,
+    #ffffff 100%
+  );
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.shop-list-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.shop-list-panel::-webkit-scrollbar-thumb {
+  background: rgba(0,114,255,0.18);
+  border-radius: 999px;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 .list-header {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  margin-bottom: 22px;
 }
 
 .list-header h1 {
-  margin: 0;
-  color: #333;
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: #111827;
+
+  margin-bottom: 18px;
 }
+
+/* =========================
+   CONTROLS
+========================= */
 
 .controls {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
 }
 
 .controls input,
 .controls select {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  border: none;
+  outline: none;
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  background: white;
+
+  font-size: 0.92rem;
+
+  color: #111827;
+
+  font-family: "Poppins", sans-serif;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.04);
+
+  transition: 0.25s ease;
 }
 
-.shop-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
+.controls input:focus,
+.controls select:focus {
+  box-shadow:
+    0 0 0 4px rgba(0,114,255,0.1);
 }
+
+.controls input::placeholder {
+  color: #9ca3af;
+}
+
+/* =========================
+   2x2 SHOP GRID
+========================= */
+
+.shop-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+}
+
+/* =========================
+   SHOP CARD
+========================= */
 
 .shop-card {
   background: white;
-  border-radius: 12px;
+
+  border-radius: 20px;
+
   padding: 16px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+  height: 230px;
+
+  overflow: hidden;
+
   cursor: pointer;
-  transition: 0.3s;
+
+  transition: all 0.28s ease;
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,0.05);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .shop-card:hover {
   transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 26px rgba(0,0,0,0.08);
 }
+
+/* =========================
+   SHOP ICON
+========================= */
+
+.shop-image {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    #0072ff,
+    #0057cc
+  );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+
+  margin-bottom: 12px;
+
+  box-shadow:
+    0 8px 18px rgba(0,114,255,0.22);
+}
+
+/* =========================
+   SHOP TEXT
+========================= */
+
+.shop-card h3 {
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  color: #111827;
+
+  line-height: 1.4;
+
+  margin-bottom: 8px;
+}
+
+.shop-card .desc {
+  font-size: 0.8rem;
+
+  color: #4b5563;
+
+  line-height: 1.5;
+
+  margin-bottom: 8px;
+}
+
+.shop-card .address {
+  font-size: 0.74rem;
+
+  color: #6b7280;
+
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+}
+
+/* =========================
+   INFO PILLS
+========================= */
 
 .info {
   display: flex;
+  flex-wrap: wrap;
+
   gap: 8px;
-  align-items: center;
-  color: #666;
-  font-size: 0.9rem;
 }
 
-/* Sliding Details Panel */
-.details-panel {
-  position: absolute;
-  right: 0;
+.info span {
+  background: #f3f6fb;
+
+  color: #374151;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 0.72rem;
+
+  font-weight: 500;
+}
+
+/* =========================
+   DETAILS PANEL
+========================= */
+
+.fullscreen-details {
+  position: fixed;
+
   top: 0;
-  height: 100%;
-  width: 50%;
-  background: white;
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-  z-index: 1500;
+  right: 0;
+
+  width: 40%;
+  height: 100vh;
+
+  z-index: 9999;
+
   overflow-y: auto;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  transition: all 0.4s ease-in-out;
+
+  background: linear-gradient(
+    135deg,
+    #f8fbff 0%,
+    #eef4ff 45%,
+    #ffffff 100%
+  );
+
+  box-shadow:
+    -12px 0 40px rgba(0,0,0,0.12);
 }
 
-@media (max-width: 900px) {
-  .dashboard-container {
-    grid-template-columns: 100%;
+/* =========================
+   BACKDROP
+========================= */
+
+.details-backdrop {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.28);
+
+  backdrop-filter: blur(4px);
+
+  z-index: 9998;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+}
+
+.leaflet-popup-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.location-loading {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  background: linear-gradient(
+    135deg,
+    #f8fbff 0%,
+    #eef4ff 45%,
+    #ffffff 100%
+  );
+
+  color: #111827;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+  .shop-grid {
+    grid-template-columns: 1fr;
   }
-  .details-panel {
+}
+
+@media (max-width: 1000px) {
+
+  .dashboard-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .map-section,
+  .shop-list-panel {
     width: 100%;
-    border-radius: 0;
+  }
+
+  .map-section {
+    height: 45vh;
+  }
+
+  .fullscreen-details {
+    width: 100%;
   }
 }

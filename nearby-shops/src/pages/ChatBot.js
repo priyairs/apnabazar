@@ -3,7 +3,7 @@ import "../styles/chatbot.css";
 
 export default function ChatBot() {
   const [messages, setMessages] = useState([
-    { sender: "bot", text: "👋 Hi! I’m Local Hunt Assistant. Ask me about nearby shops or vendors." },
+    { sender: "bot", text: "👋 Hi! I’m Apnabazar Assistant. Ask me about nearby shops or vendors." },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -127,7 +127,7 @@ export default function ChatBot() {
 
   return (
     <div className="chatbot-container">
-      <h2>🤖 Local Hunt Assistant</h2>
+      <h2>🤖 Apnabazar Assistant</h2>
 
       <div className="chatbot-box">
         {messages.map((msg, i) => (

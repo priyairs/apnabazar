@@ -27,7 +27,7 @@ export default function ShopList({ userLocation, shops }) {
         width: "250px",
       }}
     >
-      <h3>Nearby Shops</h3>
+      <h3>ApnaBazaar</h3>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {sorted.map((shop, idx) => (
           <li

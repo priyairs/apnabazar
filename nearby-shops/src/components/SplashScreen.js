@@ -14,8 +14,7 @@ export default function SplashScreen() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(135deg, #4b6cb7, #182848)",
-        color: "white",
+        background: "linear-gradient(135deg, #fafbfc, #f6f7f8)",
         textAlign: "center",
       }}
     >
@@ -29,9 +28,14 @@ export default function SplashScreen() {
           repeatType: "reverse",
           ease: "easeInOut",
         }}
-        style={{ fontSize: "3rem", marginBottom: "20px" }}
+        style={{
+          fontSize: "3rem",
+          marginBottom: "20px",
+          color: "#000", // Black color text
+          fontWeight: "700",
+        }}
       >
-        🌍 Show My Shop
+        🌍 ApnaBazaar
       </motion.h1>
 
       {/* Spinner animation */}
@@ -39,15 +43,22 @@ export default function SplashScreen() {
         style={{
           width: "40px",
           height: "40px",
-          border: "4px solid rgba(255,255,255,0.3)",
-          borderTop: "4px solid #ffb703",
+          border: "4px solid rgba(0, 0, 0, 0.2)",
+          borderTop: "4px solid #000",
           borderRadius: "50%",
         }}
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-      ></motion.div>
+      />
 
-      <p style={{ marginTop: "20px", fontSize: "1rem", opacity: 0.8 }}>
+      <p
+        style={{
+          marginTop: "20px",
+          fontSize: "1rem",
+          opacity: 0.7,
+          color: "#333",
+        }}
+      >
         Loading your experience…
       </p>
     </motion.div>
