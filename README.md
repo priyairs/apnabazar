@@ -83,6 +83,4 @@ ApnaBazaar is a MERN stack location-based web application that helps users disco
 | 23BD1A6791 | G Vijaya Phanindra |
 | 23BD1A6790 | G Prashanth |
 
-**Guide:** Mrs. Ayesha Anjum, Assistant Professor
-**Institution:** Keshav Memorial Institute of Technology, Hyderabad
-**Department:** CSE (Data Science) | A.Y 2026-27
+
